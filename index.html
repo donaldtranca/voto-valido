@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Container principal da aplicação -->
+    <div class="container">
+        <!-- Título da aplicação -->
+        <h1 class="titulo">Verificador de Idade</h1>
+        
+        <!-- Formulário de entrada de dados -->
+        <form class="formulario" id="formularioIdade">
+            <!-- Campo para nome completo -->
+            <div class="campo-grupo">
+                <label for="nomeCompleto" class="label">Nome Completo</label>
+                <input 
+                    type="text" 
+                    id="nomeCompleto" 
+                    class="input" 
+                    placeholder="Digite seu nome completo"
+                    required
+                >
+                <div class="erro" id="erroNome">Por favor, digite seu nome completo.</div>
+            </div>
+
+            <!-- Campo para data de nascimento -->
+            <div class="campo-grupo">
+                <label for="dataNascimento" class="label">Data de Nascimento</label>
+                <input 
+                    type="date" 
+                    id="dataNascimento" 
+                    class="input"
+                    required
+                >
+                <div class="erro" id="erroData">Por favor, selecione uma data de nascimento válida.</div>
+            </div>
+
+            <!-- Botão para verificar idade -->
+            <button type="submit" class="botao">Verificar Idade</button>
+        </form>
+
+        <!-- Área onde será exibido o resultado -->
+        <div class="resultado" id="resultado"></div>
+    </div>
+
+    <!-- Link para o arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>

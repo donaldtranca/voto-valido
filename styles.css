@@ -1,0 +1,290 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis CSS minimalistas */
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+
+  /* Sombras sutis */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Transições */
+  --transition: 0.2s ease-in-out;
+}
+
+/* Background minimalista com padrão sutil */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-gray-50);
+  background-image: url("img/background.png"); /* Update: changed background image */
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--color-gray-900);
+  line-height: 1.6;
+}
+
+/* Container principal limpo */
+.container {
+  background: var(--color-white);
+  padding: 48px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid var(--color-gray-200);
+}
+
+/* Título minimalista */
+.titulo {
+  text-align: center;
+  color: var(--color-black);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: -0.025em;
+}
+
+/* Formulário */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Grupos de campos */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Labels limpos */
+.label {
+  font-weight: 500;
+  color: var(--color-gray-700);
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+}
+
+/* Campos de entrada minimalistas */
+.input {
+  padding: 12px 16px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all var(--transition);
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: var(--color-gray-400);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-black);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.input:hover:not(:focus) {
+  border-color: var(--color-gray-400);
+}
+
+/* Botão minimalista */
+.botao {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-top: 8px;
+  font-family: inherit;
+}
+
+.botao:hover {
+  background: var(--color-gray-800);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.botao:active {
+  transform: translateY(0);
+}
+
+/* Área de resultado limpa */
+.resultado {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  display: none;
+  animation: fadeInUp 0.4s ease-out;
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-gray-50);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estados do resultado */
+.resultado.maior {
+  background: var(--color-white);
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-900);
+}
+
+.resultado.menor {
+  background: var(--color-gray-100);
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-700);
+}
+
+/* Informações eleitorais SEM emoji problemático */
+.info-eleitoral {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-white);
+  position: relative;
+}
+
+/* Título da seção eleitoral */
+.info-eleitoral strong:first-child {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-white); /* Update: changed color to white */
+  font-weight: 600;
+}
+
+/* Situações eleitorais */
+.info-eleitoral.voto-obrigatorio {
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  border-color: var(--color-gray-700);
+}
+
+.info-eleitoral.voto-facultativo {
+  background: var(--color-gray-600);
+  color: var(--color-white);
+  border-color: var(--color-gray-500);
+}
+
+.info-eleitoral.nao-pode-votar {
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+  border-color: var(--color-gray-300);
+}
+
+/* Mensagens de erro */
+.erro {
+  color: var(--color-gray-600);
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-top: 6px;
+  display: none;
+  padding: 8px 12px;
+  background: var(--color-gray-100);
+  border-radius: 6px;
+  border-left: 3px solid var(--color-gray-400);
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .container {
+    padding: 32px 24px;
+    margin: 16px;
+  }
+
+  .titulo {
+    font-size: 1.75rem;
+    margin-bottom: 32px;
+  }
+
+  .formulario {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 24px 20px;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .input {
+    padding: 10px 14px;
+  }
+
+  .botao {
+    padding: 12px 20px;
+  }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Estados de foco melhorados para acessibilidade */
+.botao:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
